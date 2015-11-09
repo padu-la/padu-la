@@ -18,7 +18,15 @@
         <h5 class="header col s12 light">Connecting families, building lost realtionships and tracing history.</h5>
 		<br>
 		<h4 class="header col s12 light green-text">We are working to make it great!</h4>
-      </div>
+		<h6>if you want to participate in our private beta register here:</h6>
+    <div class="input-field col s12">
+      <input id="email" type="email" class="">
+      <label for="email">Email</label>
+    </div>
+    <button id="register" class="btn waves-effect waves-light" type="submit" name="action">Submit
+      <i class="material-icons right">send</i>
+    </button>
+	    </div>
     </div>
     <br><br>
   </div>
@@ -41,5 +49,15 @@
   </footer>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/js/materialize.min.js"></script>
+  <script>
+$(document).ready(function(){
+  $('#register').click(function() {
+    $.post('register.php', { email: $('email').val() }, function(data) {
+        Materialize.toast('Thanks for registering, you will receive an email shortly!', 2000, 'rounded')
+    });
+    return false; // prevent default
+  });
+});
+  </script>
   </body>
 </html>
