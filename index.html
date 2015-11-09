@@ -52,7 +52,7 @@
   <script>
 $(document).ready(function(){
   $('#register').click(function() {
-    $.get('register.php', { email: $('email').val() }, function(data) {
+    $.get('register.html', { email: $('email').val() }, function(data) {
         Materialize.toast('Thanks for registering, you will receive an email shortly!', 2000, 'rounded')
     });
     return false; // prevent default
